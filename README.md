@@ -40,7 +40,7 @@ function readBlobAsDataURL (file,callback){
 ***
 ```
 //  type 图片的mime
-canvas.toDataURL(type)
+ const formatUrl =canvas.toDataURL(type)
 ```
 ***
 ```
@@ -59,4 +59,8 @@ function dataURLtoBlob(url) {
   return new Blob([u8arr], {type:mime});
 
 }
+```
+***
+```
+new File([dataURLtoBlob(formatUrl)], name, { type })
 ```
