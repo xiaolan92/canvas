@@ -24,3 +24,39 @@
     }
     img.url = '图片地址';
 ```
+***
+```
+// File转DataURL
+function readBlobAsDataURL (file,callback){
+  const fr = new FileReader();
+  fr.onload = (e)=>{
+     // e.target.result 为图片的url
+    callback(e.target.result);
+  }
+  fr.readAsDataURL(file);
+}
+
+```
+***
+```
+//  type 图片的mime
+canvas.toDataURL(type)
+```
+***
+```
+function dataURLtoBlob(url) {
+
+  let arr = url.split(','), mime = arr[0].match(/:(.*?);/)[1],
+
+      bstr = atob(arr[1]), i = bstr.length, u8arr = new Uint8Array(i);
+
+  while(i--){
+
+    u8arr[i] = bstr.charCodeAt(i);
+
+  }
+
+  return new Blob([u8arr], {type:mime});
+
+}
+```
