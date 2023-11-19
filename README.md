@@ -64,3 +64,9 @@ function dataURLtoBlob(url) {
 ```
 new File([dataURLtoBlob(formatUrl)], name, { type })
 ```
+***
+
+```
+ // 在页面渲染合成后的图像，释放创建的 URL 对象。
+ URL.revokeObjectURL(img.url);
+```
