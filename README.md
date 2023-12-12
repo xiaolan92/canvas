@@ -62,7 +62,7 @@ function dataURLtoBlob(url) {
 ```
 ***
 ```
-new File([dataURLtoBlob(formatUrl)], name, { type })
+new File([dataURLtoBlob(formatUrl)], name, { type:type })
 ```
 ***
 
